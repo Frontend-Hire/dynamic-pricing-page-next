@@ -17,12 +17,16 @@ const getPrices = async () => {
   });
 };
 
-export default function PagesRouterCSR() {
-  const { data } = useSWR('prices', getPrices, {
+const usePrices = () => {
+  return useSWR('prices', getPrices, {
     fallbackData: PRICES['DEFAULT'],
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });
+};
+
+export default function PagesRouterCSR() {
+  const { data } = usePrices();
 
   return (
     <div className="container mx-auto px-5">
