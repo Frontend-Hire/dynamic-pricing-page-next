@@ -26,7 +26,7 @@ export const getStaticProps = (async (context) => {
 export default function PagesRouterSSG({ prices }: { prices: string[] }) {
   return (
     <div className="container mx-auto px-5">
-      <p className="text-xl font-bold">PagesRouterSSR</p>
+      <p className="text-xl font-bold">PagesRouterSSG</p>
       <PricingSection prices={prices} />
     </div>
   );
